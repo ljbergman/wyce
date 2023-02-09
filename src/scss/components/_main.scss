@@ -1,0 +1,23 @@
+@use '../base/typography' as *;
+
+.field-container {
+   
+    margin-top: 2%;
+    margin-bottom: 2%;
+    padding: 20px;
+    width: 858px;
+    background-color: rgba(255,255,255,0.85);
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 3px 6px black;
+
+}
+
+.title {
+
+    margin-left: 5px; 
+    font-family: $header-font; 
+    font-size: 48px;
+
+}
+

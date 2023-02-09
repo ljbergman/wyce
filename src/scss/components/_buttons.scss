@@ -1,0 +1,35 @@
+@use '../base/typography' as *;
+
+button {
+
+    display: inline;
+    
+    font-family: $pg-font; 
+    font-size: 11.5px; 
+    padding: 10px; 
+    width: 137px; 
+    height: 44px; 
+    border-radius: 12px;
+
+    background-image: linear-gradient(to right, #1F1C2C 0%, #928DAB  51%, #1F1C2C  100%);
+    
+   
+    text-align: center;
+    text-transform: uppercase;
+    transition: 1s;
+    background-size: 200% auto;
+    color: #fff;            
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    
+
+    &:hover {
+        background-position: right center; 
+        color: #fff;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    
+    
+}

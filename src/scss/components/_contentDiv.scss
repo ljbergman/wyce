@@ -1,0 +1,40 @@
+@use '../base/typography' as *;
+
+.contentDiv {
+
+    text-align: center; 
+    margin: 5px; 
+    width: 820px; 
+    border: 1px solid #bbb; 
+    border-radius: 12px; 
+    font-family: $pg-font; 
+    font-size: 14px; 
+    font-weight: bold;
+    padding: 10px;
+    background-color: rgba(255,255,255,0.0);
+
+}
+
+
+
+.contentDiv a:link {
+
+    color: #0000ff;
+    text-decoration: none;
+
+}
+
+.contentDiv a:visited {
+
+    color: #0000ff;
+    text-decoration: none;
+
+}
+
+.contentDiv a:hover {
+
+    color: #0000ff;
+    text-decoration: underline;
+    font-weight: bold;
+
+}
