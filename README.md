@@ -7,7 +7,7 @@ Customize your search with the following inputs:
 
 - general query: e.g burger, soup, vegetarian etc
 - intolerances: gluten, dairy, egg, peanut, sesame, seafood, shellfish, soy, sulfite, tree nut, wheat
-- exclude specific ingredients from the search: eg. onion, sunflower seeds
+- exclude specific ingredients: free choice (eg. onion, sunflower seeds, salt)
 - diets: vegan, vegetarian, pescetarian, lacto vegetarian, ovo vegetarian, gluten free, dairy free, paleolithic, primal, whole 30, low fodmap
 
 Other features:
