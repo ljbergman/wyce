@@ -3,7 +3,7 @@
 ![image](https://wyce.recipes/wyce.png)
 
 A food intolerance and diet focused recipe website made in AJAX, Sass and Typescript.
-You can customize your search with the following inputs:
+Customize your search with the following inputs:
 
 - general query: e.g burger, soup, vegetarian etc
 - intolerances: gluten, dairy, egg, peanut, sesame, seafood, shellfish, soy, sulfite, tree nut, wheat
