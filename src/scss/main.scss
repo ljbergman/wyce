@@ -1,23 +1,19 @@
 
 
-/* @use 'base';
-@use 'helpers';
-
-@use 'layout';
-@use 'pages';
-@use 'vendors';
-@use 'themes';
-@use 'abstract';
-*/
-
+@use 'base/headers';
 @use 'base/typography';
 
 @use 'layout/body';
-@use 'layout/flexContainer';
+@use 'layout/header';
+@use 'layout/nav';
+@use 'layout/footer';
 
-@use 'components/buttons';
-@use 'components/searchField';
-@use 'components/contentDiv';
+@use 'components/promoHeader'; /* Home tab header*/
+@use 'components/animation'; /* promo animation in search tab header*/
 @use 'components/main';
+@use 'components/buttons';
+@use 'components/searchHeader'; /* Search tab header */
+@use 'components/favoriteHeader'; /* Favorites tab header */
+@use 'components/recipeHeader'; /* Recipe tab header */
 
 

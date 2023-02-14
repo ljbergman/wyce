@@ -1,12 +1,16 @@
 
 
 @font-face {
-    font-family: Sunflower;
+
+    font-family: CafeFrancoise-EapP9;
     font-weight: bold;
-    src: url("fonts/Sunflower-lgZye.otf") format("opentype");
+    src: url("../fonts/CafeFrancoise-EapP9.ttf") format("truetype");
+
 }
 
+/* Standard fonts across the website */
+$header-font: CafeFrancoise-EapP9, arial, verdana, sans-serif;
+$std-font: arial, verdana, sans-serif;
 
-$header-font: Sunflower, arial, verdana, sans-serif;
-$pg-font: arial, verdana, sans-serif;
+
 

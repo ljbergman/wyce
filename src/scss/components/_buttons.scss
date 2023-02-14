@@ -1,35 +1,41 @@
-@use '../base/typography' as *;
 
-button {
-
-    display: inline;
-    
-    font-family: $pg-font; 
-    font-size: 11.5px; 
-    padding: 10px; 
-    width: 137px; 
-    height: 44px; 
-    border-radius: 12px;
-
-    background-image: linear-gradient(to right, #1F1C2C 0%, #928DAB  51%, #1F1C2C  100%);
-    
+    .button-div {
    
-    text-align: center;
-    text-transform: uppercase;
-    transition: 1s;
-    background-size: 200% auto;
-    color: #fff;            
-    box-shadow: 0 0 20px #eee;
-    border-radius: 10px;
-    
-
-    &:hover {
-        background-position: right center; 
-        color: #fff;
-        text-decoration: none;
-        cursor: pointer;
+        width: 100%;
+        height: 7vh;
+        margin: 0;
+        padding: 0;
+   
     }
 
-    
-    
-}
+
+    /* Classic linear-gradient button used on both Search, Home and Favorites */
+    .button {
+        background-image: linear-gradient(to right, #3CA55C 0%, #B5AC49  51%, #3CA55C  100%);
+        margin: 0px;
+        padding: 15px 45px;
+        
+        text-transform: uppercase;
+        transition: 0.1s;
+        background-size: 200% auto;
+        color: white;            
+        box-shadow: 0 0 20px #eee;
+        border-radius: 10px;
+        display: block;
+        
+        width: -webkit-fill-available;
+        height: 50px;
+
+        font-size: 1.2rem;
+
+        &:hover {
+          background-position: right center; 
+          color: #fff;
+          text-decoration: none;
+          cursor: pointer;
+          
+        }
+        
+      }
+
+      

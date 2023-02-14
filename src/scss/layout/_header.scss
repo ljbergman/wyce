@@ -1,0 +1,32 @@
+
+   @use '../base/typography' as t;
+   
+   header, footer, nav, article {
+    
+        font-size: 28px;
+        font-family: t.$std-font;
+    }
+    
+    header {
+    
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    
+        width: 94%;
+        margin-right: 3%;
+        margin-left: 3%;
+        margin-bottom: 20px;
+        margin-top: 20px;
+
+        border: 0px solid #bbb;
+
+        .logo {
+
+            width: 160px;
+            border: 0;
+    
+        }
+
+       
+    }

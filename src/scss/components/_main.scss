@@ -1,23 +1,229 @@
-@use '../base/typography' as *;
 
-.field-container {
+    @use '../base/typography' as t;
+
+   /* mixin used by all sections (2a-d) */
+   @mixin articleSection($a, $b) {
+
+    justify-content: $a; /* default: space-evenly. Alternative: space-around OR space-between */
+    align-items: $b; /* default: stretch. Alternative: center, flex-end, baseline */
+    flex-wrap: wrap;
+    width: 94%;
+    margin-right: 3%;
+    margin-left: 3%;
+    margin-top: 1%;
+    border: 0px solid #bbb;
+
+   }
+
+    .section2 {
+        
+        display: none;
+
+        @include articleSection(space-evenly, stretch);
+
+        article {
+
+            img {
+
+                /* height: 200px; */
+                width: -webkit-fill-available;
+                object-fit: cover;
+                border-radius: 5px;
+
+            }
+
+
+        }
+        
+    }
+
+    .section2b {
+
+        display: none;
+
+        @include articleSection(space-evenly, stretch);
+
+        article {
+
+            img {
+
+                /* height: 200px; */
+                width: -webkit-fill-available;
+                object-fit: cover;
+                border-radius: 5px;
+
+            }
+
+        }
+
+    }
+
+    .section2c {
+
+        display: flex;
+
+        @include articleSection(space-evenly, stretch);
+
+        article {
+
+            img {
+
+                /* height: 200px; */
+                width: -webkit-fill-available;
+                object-fit: cover;
+                border-radius: 5px;
+
+            }
+
+        }
+
+    }
+
+    .section2d {
+
+        display: none;
+
+        @include articleSection(space-evenly, stretch);
+
+        article {
+
+            img {
+
+                /* height: 200px; */
+                width: -webkit-fill-available;
+                object-fit: cover;
+                border-radius: 5px;
+
+            }
+
+        }
+
+    }
+
+    
+
+    .recipe-id {
+
+        font-family: t.$std-font;
+        font-size: 12px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+
+    }
+
+    /* Loading GIF animation */
+    #loading {
+
+        width: 280px;
+
+    }
+
+    
+    article {
+    
+        max-width: 352px;
+        padding: 40px;
+        height: auto;
+        margin: 20px;
+        border: 1px solid #999;
+        border-radius: 12px;
+
+        h1 {
+
+            margin: 0;
+            padding: 0px 0px 10px 0px;
+            font-size: 1.3rem; /* 1.7rem max */
+            text-align: left;
+            font-family: t.$header-font;
+    
+        }
+
+        p {
+    
+            font-size: 0.8rem;
+            text-align: left;
+            line-height: 20px;
+            
+        }  
+        
+        li {
+    
+            font-size: 0.8rem;
+            text-align: left;
+            line-height: 20px;
+            
+        }   
+        
+    }
+
+    
+
+    .hiddenDiv {
+
+        display: none;
+    
+    }
+
+    .visibleDiv {
+
+        display: block;
+
+    }
+
+
+    .articleFooter {
+
+        border: 0px solid #000;
+        width: -webkit-fill-available;
+        height: 50px;
+        padding: 0px;
+        
+    }
+
+    .favorite {
+
+        text-align: center;
+        visibility:hidden;
+        font-size: 50px;
+        cursor:pointer;
+        color: #f4ac0b;
+
+        &:before {
+
+            content: "\2605";  
+            visibility:visible;
+     
+         }
+        &:checked:before {
+
+            content: "\2606";     
+     
+         }
+
+    }
    
-    margin-top: 2%;
-    margin-bottom: 2%;
-    padding: 20px;
-    width: 858px;
-    background-color: rgba(255,255,255,0.85);
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 3px 6px black;
+ 
 
-}
 
-.title {
+    .favorites {
 
-    margin-left: 5px; 
-    font-family: $header-font; 
-    font-size: 48px;
+        text-align: center;
+        visibility:hidden;
+        font-size: 50px;
+        cursor:pointer;
+        color: #f4ac0b;
 
-}
+        &:before {
 
+            content: "\2606";      
+            visibility:visible; 
+     
+         }
+        &:checked:before {
+
+            content: "\2605";     
+     
+         }
+
+    }
+   

@@ -1,0 +1,62 @@
+
+@use 'typography' as t;
+
+   /* mixins used by all xxxHeaders.scss */
+
+   @mixin headerBorder() {
+
+        border: 1px solid #999;  
+        border-radius: 12px;
+
+   }
+
+// default values that most xxxHeaders use. searchHeader provides its own though.
+@mixin headerDimensions($width: 94.4%, $height: 300px) {
+
+        width: $width;
+        height: $height;
+
+}  
+
+   // default background that most xxxHeader use if not provided
+   @mixin headerBackground($background: '../images/tableplate.jpg') {
+
+        /* Promo background */
+        background-image: url($background);
+        background-position: center;
+        background-position-y: bottom;
+        background-size: cover;
+
+   }
+
+
+   @mixin headerAnimation() {
+
+        /* Promo Animation*/
+        animation: img-transition 25s infinite ease-in-out;
+
+}
+
+
+
+   @mixin headerMargin() {
+
+        margin-right: 3%;
+        margin-left: 3%;
+        margin-top: 1%;
+
+}
+
+@mixin headerText() {
+
+        font-size: 38px;
+        font-family: t.$header-font;
+        color: #ffffff;
+        text-shadow: 2.0px 0 black; 
+        letter-spacing: 5px;
+
+}
+
+
+
+

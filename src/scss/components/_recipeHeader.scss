@@ -1,0 +1,58 @@
+@use '../base/headers' as h;
+@use '../base/typography' as t;
+
+    .recipe-header {
+    
+        display: block;
+        text-align: left;
+    
+        @include h.headerBorder();
+
+        /* Promo background */
+        @include h.headerBackground("../images/tableplate.jpg");
+
+        @include h.headerDimensions();
+
+        @include h.headerMargin();
+    
+        @include h.headerText();
+
+        padding-left: 0px;
+
+        /* Promo Animation*/
+        @include h.headerAnimation();
+      
+           
+    }
+
+
+    #recipe-div {
+
+        display: none;
+        margin: 0px;
+        padding: 0px;
+        border: 0px;
+
+    }
+    
+
+    .recipe-text {
+
+        
+        font-family: t.$header-font;
+        font-size: 22px;
+       
+        padding: 10px 10px 10px 10px;
+        margin-left: 44px;
+        display: block;
+        width: 360px;
+
+
+    }
+
+    .recipe-header h1 {
+
+        font-family: t.$header-font;
+        font-size: 50px;
+        padding-left: 50px;
+    }

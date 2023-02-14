@@ -1,9 +1,11 @@
+
+@use '../base/typography' as t;
+
 body {
 
-    margin: auto;
-    background: url("../../images/background2.jpg");
-    background-attachment: fixed;
-    background-size: cover;
-    overflow-x: hidden; 
-    
+    padding: 0px;
+    background-color: #eee;
+    margin: 0 auto;
+    text-align: center;
+
 }

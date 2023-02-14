@@ -1,0 +1,56 @@
+
+    @use '../base/headers' as h;
+    @use '../base/typography' as t;
+
+    .favorite-header {
+    
+        display: block;
+        text-align: left;
+    
+        @include h.headerBorder();
+
+        /* Promo background */
+        @include h.headerBackground();
+    
+        @include h.headerMargin();
+
+        @include h.headerDimensions();
+    
+        @include h.headerText();
+
+        padding-left: 0px;
+
+        /* Promo Animation*/
+        @include h.headerAnimation();
+        
+      
+           
+    }
+
+
+    #favorite-div {
+
+        display: none;
+        margin: 0px;
+        padding: 0px;
+        border: 0px;
+
+        h1 {
+
+            font-family: t.$header-font;
+            font-size: 50px;
+            padding-left: 50px;
+        }
+
+        .favorite-text {
+
+            font-family: t.$header-font;
+            font-size: 22px;
+            padding-left: 50px;
+            display: block;
+            width: 360px;
+            
+        }
+
+    }
+    

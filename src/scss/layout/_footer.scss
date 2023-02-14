@@ -1,0 +1,54 @@
+
+@use '../base/typography' as t;
+
+    footer {
+    
+        display: flex;
+
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;       
+        justify-content: space-between;
+
+        width: 93.5%;
+     
+        margin-right: 3.5%;
+        margin-left: 3%;
+        margin-top: 1%;
+        margin-bottom: 1%;
+
+        border: 5px solid #ddd;
+      
+        height: 100px;
+        background-color: #ccc;
+        border-radius: 12px;
+        
+
+        .footer-left {
+ 
+            text-align: left;
+            padding-top: 10px;
+            padding-left: 20px;
+            
+        }
+
+        .footer-right {
+
+            text-align: right;
+       
+            padding: 10px 20px 0px 0px;
+            font-size: 14px;
+            font-family: t.$std-font;
+             
+        } 
+
+        img {
+
+            width: 60px;
+    
+        }
+
+
+    }
+
+    

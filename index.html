@@ -1,42 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="utf8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WYCE - What You Can Eat</title>
-  <meta charset="UTF-8" />
-  
+  <meta name="description" content="Search and find your favorite food recipes based on diet and sensitivity to specific ingredients.">
+  <meta name="author" content="Jonas Bergman">
+
+  <meta property="og:title" content="WYCE - What You Can Eat" />
+  <meta property="og:description" content="Search and find your favorite food recipes based on diet and sensitivity to specific ingredients." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="wyce.jpeg" />
+  <meta property="og:site_name" content="WYCE" />
+  <meta property="og:url" content="wyce.recipes" />
+
   <link rel="stylesheet" href="dist/css/main.css">
 </head>
 <body>
 
-<div class="flex-container">
-    <div class="field-container">
+<header>
+<a href="index.html"><img src="dist/images/wyce.png" class="logo"></a>
+</header>
+<nav>
+<ul>
+    <li><a href="#" id="home-link">Home</a> &#10072; </li>
+    <li><a href="#" id="search-link">Search</a> &#10072; </li>
+    <li><a href="#" id="favorite-link">Favorites</a> &#10072;</li>
+    <li class="tooltip"><a href="#" id="recipe-link">Recipe</a><span class="tooltiptext"><b>Double click</b> to load a new random recipe.<br><br><b>Single click</b> to go back to previously loaded recipe.
+    <br><br><b>Settings</b> on the Search-page affect the results, e.g. if gluten free is checked, only gluten free recipes will be included in the randomization.</span></li>
+</ul>
+</nav>
+<main>
+<section class="promo-header" id="main-header">
+<div id="promo-div">
+<h1>Welcome to WYCE</h1>
+<p class="promo-text">Food intolerance and diet friendly recipe search</p>
+</div>
+<div id="favorite-div">
+  <h1>FAVORITES</h1>
+  <p class="favorite-text">Your collection of recipes</p>
+  </div>
+<div id="recipe-div">
+    <h1>RECIPE</h1>
+    <p class="recipe-text">Random from the archive or the latest selected one</p>
+</div>
+<div id="search-div">
+<input type="text" id="search-field"><button id="search-button">Search</button>
 
-        <button class="button" id="button1">TEST1</button> 
-        <button class="button" id="button2">TEST2</button>
- 
-        <button class="button" id="button3">TEST3</button> 
-        <button class="button" id="button4">TEST4</button>
-        
-        <button class="button" id="button5">TEST5</button> 
-        <button class="button" id="button6">TEST6</button>       
 
-        <div class="contentDiv" id="searchResults">
+<label>Gluten free <input type="checkbox" id="gluten-free"></label>
+<label>Dairy free <input type="checkbox" id="dairy-free"></label>
+<label>Wheat free <input type="checkbox" id="wheat-free"></label>
+<label>Egg free <input type="checkbox" id="egg-free"></label><br>
 
-            <div id="loading" style="display: none;"><img src="images/loading2.gif" style="width: 180px;"></div>
-            <div id="searchHits"></div>
+<label>Peanut free <input type="checkbox" id="peanut-free"></label>
+<label>Sesame free <input type="checkbox" id="sesame-free"></label>
+<label>Soy free <input type="checkbox" id="soy-free"></label>
+<label>Sulfite free <input type="checkbox" id="sulfite-free"></label><br>
 
-        </div>
-        
-        <div class="contentDiv" id="content">
+<label>Seafood free <input type="checkbox" id="seafood-free"></label>
+<label>Shellfish free <input type="checkbox" id="shellfish-free"></label>
+<label>Tree nut free <input type="checkbox" id="treenut-free"></label><br>
 
-            <img src="wyce.jpeg" style="width: 400px;">
-        
-        </div>    
-        
-    </div>
 
-</div>   
+<label>Exclude: <input type="text" id="exclude-ingredients" placeholder="e.g. onion, garlic"></label>
+<label>Diet <select id="diets">
+  <option value="none" SELECTED>No particular diet</option>
+  <option value="vegan">Vegan</option>
+  <option value="vegetarian">Vegetarian</option>
+  <option value="pescetarian">Pescetarian</option>
+  <option value="lacto vegetarian">Lacto vegetarian</option>
+  <option value="ovo vegetarian">Ovo vegetarian</option> 
+  <option value="gluten free">Gluten gree</option> 
+  <option value="dairy free">Dairy free</option> 
+  <option value="paleolithic">Paleolithic</option> 
+  <option value="primal">Primal</option> 
+  <option value="whole 30">Whole 30</option>  
+  <option value="low fodmap">Low fodmap</option>  
+</select></label>
 
+
+</div>
+</section>
+<section class="section2" id="section2">
+
+
+</section>
+<section class="section2b" id="section2b">
+
+</section>
+<section class="section2c" id="section2c">
+
+</section>
+<section class="section2d" id="section2d"></section>
+</main>
+<footer>
+<div class="footer-left">
+<img src="dist/images/wyce.png">
+</div>
+<div class="footer-right">
+<p>Copyright &copy; Jonas Bergman</p>
+</div>
+</footer>
 
 
 <script src="dist/app.js"></script>

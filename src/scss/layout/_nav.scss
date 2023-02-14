@@ -1,0 +1,119 @@
+@use '../base/typography' as t;
+
+nav {
+
+        background-image: linear-gradient(to right, #3CA55C 0%, #B5AC49  51%, #3CA55C  100%);
+       
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+     
+        width: 94%;
+        margin-right: 3%;
+        margin-left: 3%;
+
+        border: 5px solid #ddd;
+      
+        border-radius: 12px;
+        background-color: #495E57;
+        padding: 10px 0 10px 0;
+        height: 30px;
+
+        ul {
+            margin: 0;
+            padding: 0;
+
+            li {
+
+                font-size: 26px;
+                font-family: t.$header-font;
+                display: inline;
+                margin: 0px;
+                padding: 0px;
+                
+            }
+
+        }
+
+        a:link {
+            text-decoration: none;
+            color: white;
+            border-radius: 5px;
+            margin: 10px;   
+            padding: 0px 7px 0px 7px;  
+        }
+
+        a:visited {
+            text-decoration: none;
+            color: #fff;
+            border-radius: 5px;
+            margin: 10px;   
+        }
+
+        a:hover:not(.active) {
+            background-color: #bbb;
+            border-radius: 5px;
+            margin: 10px;
+            
+               
+          } 
+
+          a:active {
+
+            text-decoration: none;
+            color: #fff;
+            border-radius: 5px;
+            margin: 10px;
+           
+            border: 2px solid black;
+    
+        }     
+
+    }
+
+
+    /* TOOL TIP */
+
+    .tooltip {
+
+        position: relative;
+        display: inline-block;
+        
+      }
+      
+      .tooltip .tooltiptext {
+
+        visibility: hidden;
+        width: 120px;
+        /* background-color: rgb(192, 192, 190, 0.85); */
+        background-color: rgb(255, 255, 255, 0.8);
+        color: #000;
+        text-align: center;
+        border-radius: 6px;
+        padding: 10px;
+        font-size: 10px;
+        font-family: t.$std-font;
+        line-height: 14px;
+        
+
+        /* Position the tooltip */
+        position: absolute;
+        right: 9px;
+        margin-top: 50px;
+        z-index: 1;
+      }
+      
+      .tooltip:hover .tooltiptext {
+        visibility: visible;
+      }
+
+      /* HA MED ? */
+
+
+    p {
+
+        font-size: 12px;
+        font-family: t.$std-font;  
+
+    }
