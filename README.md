@@ -2,7 +2,7 @@
 
 ![image](https://wyce.recipes/wyce.png)
 
-A food intolerance and diet focused recipe website made in AJAX, Sass and Typescript.
+A food intolerance and diet focused recipe website made in AJAX, Sass, Typescript and HTML.
 Customize your search with the following inputs:
 
 - general query: e.g burger, soup, vegetarian etc
