@@ -20,7 +20,7 @@ Other features:
 Upcoming:
 - Generate recipes similar to the one you picked
 
-# Test URL: wyce.recipes
+# Demo URL: wyce.recipes
 
 ## API
 
