@@ -15,7 +15,7 @@ Other features:
 - Add recipes to favorites
 
 Upcoming:
-- Generate similar recipes to the one you picked
+- Generate recipes similar to the one you picked
 
 # Test URL: wyce.recipes
 
