@@ -21,7 +21,7 @@ Other features:
 Upcoming:
 - Generate recipes similar to the one you picked
 
-# Demo URL: wyce.recipes
+# Demo URL: http://wyce.recipes
 
 ## API
 
