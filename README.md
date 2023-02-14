@@ -11,8 +11,11 @@ Customize your search with the following inputs:
 - diets: vegan, vegetarian, pescetarian, lacto vegetarian, ovo vegetarian, gluten free, dairy free, paleolithic, primal, whole 30, low fodmap
 
 Other features:
+- Open recipe in Recipe tab and leave it there
 - Generate a random recipe based on chosen search settings
 - Add recipes to favorites
+- Remove recipes from favorites
+
 
 Upcoming:
 - Generate recipes similar to the one you picked
