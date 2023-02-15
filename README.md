@@ -38,5 +38,13 @@ URLS:
 
 ![image](https://wyce.recipes/wyce_api.png)
 
+# Typescript tsconfig.json:
+"strict": true,
+"noImplicitAny": true,
+"strictFunctionTypes": true,
+"noUnusedLocals": true,
+"noUnusedParameters": true,   
+"noImplicitReturns": true,
+
 ## My linkedIn Profile:
 https://www.linkedin.com/in/jonas-bergman-a47886174/
