@@ -19,7 +19,8 @@ Other features:
 
 Upcoming:
 - Generate recipes similar to the one you picked
-- More mobile friendly version (optimization)
+- Find recipes via list with different categories of food
+- Slightly more mobile friendly version (optimization)
 - OOP version of Wyce (typescript)
 
 # Demo URL: http://wyce.recipes
