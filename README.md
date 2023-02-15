@@ -20,6 +20,7 @@ Other features:
 
 Upcoming:
 - Generate recipes similar to the one you picked
+- OOP version of Wyce
 
 # Demo URL: http://wyce.recipes
 
