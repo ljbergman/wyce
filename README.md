@@ -19,6 +19,7 @@ Other features:
 
 Upcoming:
 - Generate recipes similar to the one you picked
+- Better error handling
 - List with different categories
 - Slightly more mobile friendly version (optimization)
 - OOP version of Wyce (typescript)
