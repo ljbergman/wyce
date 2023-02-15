@@ -17,7 +17,6 @@ Other features:
 - Add recipes to favorites
 - Remove recipes from favorites
 
-
 Upcoming:
 - Generate recipes similar to the one you picked
 - OOP version of Wyce
@@ -37,3 +36,6 @@ URLS:
 ## SETTINGS:
 
 ![image](https://wyce.recipes/wyce_api.png)
+
+## My linkedIn Profile:
+https://www.linkedin.com/in/jonas-bergman-a47886174/
