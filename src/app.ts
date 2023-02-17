@@ -1,6 +1,6 @@
 
      // default settings (sVariable)
-    let API_KEY = 'f2e9364cb5msh4871bf96e730354p1564fajsnef80add6fcd2'; 
+    let API_KEY = 'API_KEY'; 
     let API_HOST = 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com';
     let sHits = '30'; // number of search hits, 8-24 is recommended
     let sHomeRecipes: number[] = [690978, 628780, 626234, 812399]; // array with recipes (IDs) to be shown on the Home page
@@ -57,7 +57,7 @@
      const options = {
         method: 'GET',
         headers: {
-            'X-RapidAPI-Key': API_KEY,
+            'X-RapidAPI-Key': API_KEY + 'cd2',
             'X-RapidAPI-Host': API_HOST
         }
     };
