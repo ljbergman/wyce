@@ -13,9 +13,11 @@
         flex-direction: row;
         justify-content: center;
     
-        width: 94%;
-        margin-right: 3%;
-        margin-left: 3%;
+        width: 90%;
+
+        margin-right: auto;
+        margin-left: auto;
+
         margin-bottom: 20px;
         margin-top: 20px;
 
@@ -30,3 +32,37 @@
 
        
     }
+
+/* ----- Screen width 1520+ px ------ */
+@media only screen and (min-width: 1520px) {
+
+    header {
+  
+        .logo {
+  
+          width: 200px;
+  
+        }
+    
+      }
+    
+    }
+
+/* ----- Screen width up to 530px ------ */
+@media only screen and (max-width: 530px) {
+
+    header {
+  
+      .logo {
+
+        width: 160px;
+
+      }
+
+      width: 480px;
+  
+    }
+  
+  }
+
+

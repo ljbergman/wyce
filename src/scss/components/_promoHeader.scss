@@ -17,7 +17,8 @@
     
         @include h.headerText();
 
-        padding-left: 0px;
+        padding-left: 15px;
+        padding-top: 15px;
 
         /* Promo Animation*/
         @include h.headerAnimation();
@@ -27,8 +28,9 @@
 
             display: block;
             margin: 0px;
-            padding: 0px;
+            padding: 0px 0px 0px 0px;
             border: 0px;
+            width: 464px;
 
             h1 {
 
@@ -51,6 +53,16 @@
         }
        
     }
+
+/* ----- Screen width up to 510px ------ */
+@media only screen and (max-width: 510px) {
+    .promo-header {
+        @include h.headerDimensions(468px, 300px);
+        margin-left: auto;
+        margin-right: auto;
+        @include h.headerBorder(0px, 0px);
+    }
+}
 
 
 

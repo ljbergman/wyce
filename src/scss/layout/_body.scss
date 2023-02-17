@@ -8,4 +8,20 @@ body {
     margin: 0 auto;
     text-align: center;
 
+
+  
+
 }
+
+@media only screen and (max-width: 510px) {
+
+    body {
+    
+        transform: scale(0.9);
+        transform-origin: 0 0;
+        
+       
+
+    }
+}
+

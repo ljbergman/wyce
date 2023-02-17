@@ -1,11 +1,12 @@
 
      // default settings (sVariable)
-    let API_KEY = 'API-KEY-HERE'; 
+    let API_KEY = 'f2e9364cb5msh4871bf96e730354p1564fajsnef80add6fcd2'; 
     let API_HOST = 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com';
-    let sHits = '12'; // number of search hits, 8-24 is recommended
-    let sHomeRecipes: number[] = [809898, 628780, 626234, 812399]; // array with recipes (IDs) to be shown on the Home page
+    let sHits = '30'; // number of search hits, 8-24 is recommended
+    let sHomeRecipes: number[] = [690978, 628780, 626234, 812399]; // array with recipes (IDs) to be shown on the Home page
     let sShowHomeRecipes:boolean = true; // Show Home recipes - on or off (default: true)
     let sShowRecipeID:boolean = false; // Show recipe IDs in search (default: false)
+    let sShowHPRSummary:boolean = false; // Show recipe Summary text on the Home page (default: false)
 
     let section2 = document.querySelector("#section2") as HTMLDivElement;
     let section2b = document.querySelector("#section2b") as HTMLDivElement;
@@ -22,6 +23,8 @@
     let promoDiv = document.querySelector("#promo-div") as HTMLDivElement;
     let favoriteDiv = document.querySelector("#favorite-div") as HTMLDivElement;
     let recipeDiv = document.querySelector("#recipe-div") as HTMLDivElement;
+
+    let tooltipBox= document.querySelector(".tooltiptext") as HTMLSpanElement;
 
     // Search inputs
     let searchField = document.querySelector("#search-field") as HTMLInputElement;
@@ -43,14 +46,6 @@
     
     let excludeIngredients = document.querySelector("#exclude-ingredients") as HTMLInputElement;
     
-    /*
-    let vegan = document.querySelector("#vegan") as HTMLInputElement;
-    let vegetarian = document.querySelector("#vegetarian") as HTMLInputElement;
-    */
-    
-
-
-
    
     // API Image URL
     const imageURL: string = 'https://spoonacular.com/recipeImages/';
@@ -140,7 +135,7 @@
         // Show loading GIF animation
         let loadingDIV = document.createElement("div") as HTMLDivElement;
         let loadingGIF = document.createElement("img") as HTMLImageElement;
-        loadingGIF.src = 'dist/images/loading.gif';
+        loadingGIF.src = 'images/loading.gif';
         loadingGIF.id = 'loading';
         loadingDIV.append(loadingGIF);
         section2c.append(loadingDIV);
@@ -197,8 +192,12 @@
 
                 h1.innerHTML = data.title; // Recipe Article Title           
                 img.src = data.image; // Recipe Image URL              
-                p.innerHTML = data.summary; // Recipe Summary
+                
 
+                // Show Home page recipe Summary if set to true
+                if (sShowHPRSummary) {
+                    p.innerHTML = data.summary; // Recipe Summary
+                }
                
                 p2.innerHTML = data.instructions; // Recipe Instructions
 
@@ -231,11 +230,11 @@
                     diets.innerHTML += data.diets[i] + ', ';
                 }
 
-                if (data.glutenFree==false) { row1.innerHTML = "Gluten-free: <img src='dist/images/redNo.png' style='width: 14px; height: 10px;'> &nbsp;&nbsp;"; } else { row1.innerHTML = "Gluten free: <img src='dist/images/greenCheck2.jpg' style='width: 10px; height: 10px;'> &nbsp;&nbsp;"; }
-                if (data.dairyFree==false) { row1.innerHTML += "Dairy-free: <img src='dist/images/redNo.png' style='width: 14px; height: 10px;'> &nbsp;&nbsp;"; } else { row1.innerHTML += "Dairy-free: <img src='dist/images/greenCheck2.jpg' style='width: 10px; height: 10px;'> &nbsp;&nbsp;"; }
-                if (data.vegan==false) { row1.innerHTML += "Vegan: <img src='dist/images/redNo.png' style='width: 14px; height: 10px;'>"; } else { row1.innerHTML += "Vegan: <img src='dist/images/greenCheck2.jpg' style='width: 10px; height: 10px;'>"; }
-                if (data.vegetarian==false) { row2.innerHTML = "Vegetarian: <img src='dist/images/redNo.png' style='width: 14px; height: 10px;'> &nbsp;&nbsp;"; } else { row2.innerHTML = "Vegetarian: <img src='dist/images/greenCheck2.jpg' style='width: 14px; height: 14px;'> &nbsp;&nbsp;"; }
-                if (data.lowFodmap==false) { row2.innerHTML += "Low fodmap: <img src='dist/images/redNo.png' style='width: 14px; height: 10px;'>"; } else { row2.innerHTML += "Low fodmap: <img src='dist/images/greenCheck2.jpg' style='width: 10px; height: 10px;'>"; }
+                if (data.glutenFree==false) { row1.innerHTML = "Gluten-free: <img src='images/redNo.png' style='width: 14px; height: 10px;'> &nbsp;&nbsp;"; } else { row1.innerHTML = "Gluten free: <img src='images/greenCheck2.jpg' style='width: 10px; height: 10px;'> &nbsp;&nbsp;"; }
+                if (data.dairyFree==false) { row1.innerHTML += "Dairy-free: <img src='images/redNo.png' style='width: 14px; height: 10px;'> &nbsp;&nbsp;"; } else { row1.innerHTML += "Dairy-free: <img src='images/greenCheck2.jpg' style='width: 10px; height: 10px;'> &nbsp;&nbsp;"; }
+                if (data.vegan==false) { row1.innerHTML += "Vegan: <img src='images/redNo.png' style='width: 14px; height: 10px;'>"; } else { row1.innerHTML += "Vegan: <img src='images/greenCheck2.jpg' style='width: 10px; height: 10px;'>"; }
+                if (data.vegetarian==false) { row2.innerHTML = "Vegetarian: <img src='images/redNo.png' style='width: 14px; height: 10px;'> &nbsp;&nbsp;"; } else { row2.innerHTML = "Vegetarian: <img src='images/greenCheck2.jpg' style='width: 14px; height: 14px;'> &nbsp;&nbsp;"; }
+                if (data.lowFodmap==false) { row2.innerHTML += "Low fodmap: <img src='images/redNo.png' style='width: 14px; height: 10px;'>"; } else { row2.innerHTML += "Low fodmap: <img src='images/greenCheck2.jpg' style='width: 10px; height: 10px;'>"; }
 
                 frontArticle.append(diets);
                 frontArticle.append(row1);
@@ -258,10 +257,6 @@
 
 
 
-
-
-
-
     // Function that creates recipe <article> blocks in Section 2d of <main>
     // The ID of the recipe article is passed as an argument (fetchID)
     function frontArticle2(fetchId: number) {
@@ -269,7 +264,7 @@
         // Show loading GIF animation
         let loadingDIV = document.createElement("div") as HTMLDivElement;
         let loadingGIF = document.createElement("img") as HTMLImageElement;
-        loadingGIF.src = 'dist/images/loading.gif';
+        loadingGIF.src = 'images/loading.gif';
         loadingGIF.id = 'loading';
         loadingDIV.append(loadingGIF);
         section2d.append(loadingDIV);
@@ -335,11 +330,11 @@
                     diets.innerHTML += data.diets[i] + ', ';
                 }
 
-                if (data.glutenFree==false) { row1.innerHTML = "Gluten-free: <img src='dist/images/redNo.png' style='width: 14px; height: 10px;'> &nbsp;&nbsp;"; } else { row1.innerHTML = "Gluten free: <img src='dist/images/greenCheck2.jpg' style='width: 10px; height: 10px;'> &nbsp;&nbsp;"; }
-                if (data.dairyFree==false) { row1.innerHTML += "Dairy-free: <img src='dist/images/redNo.png' style='width: 14px; height: 10px;'> &nbsp;&nbsp;"; } else { row1.innerHTML += "Dairy-free: <img src='dist/images/greenCheck2.jpg' style='width: 10px; height: 10px;'> &nbsp;&nbsp;"; }
-                if (data.vegan==false) { row1.innerHTML += "Vegan: <img src='dist/images/redNo.png' style='width: 14px; height: 10px;'>"; } else { row1.innerHTML += "Vegan: <img src='dist/images/greenCheck2.jpg' style='width: 10px; height: 10px;'>"; }
-                if (data.vegetarian==false) { row2.innerHTML = "Vegetarian: <img src='dist/images/redNo.png' style='width: 14px; height: 10px;'> &nbsp;&nbsp;"; } else { row2.innerHTML = "Vegetarian: <img src='dist/images/greenCheck2.jpg' style='width: 14px; height: 14px;'> &nbsp;&nbsp;"; }
-                if (data.lowFodmap==false) { row2.innerHTML += "Low fodmap: <img src='dist/images/redNo.png' style='width: 14px; height: 10px;'>"; } else { row2.innerHTML += "Low fodmap: <img src='dist/images/greenCheck2.jpg' style='width: 10px; height: 10px;'>"; }
+                if (data.glutenFree==false) { row1.innerHTML = "Gluten-free: <img src='images/redNo.png' style='width: 14px; height: 10px;'> &nbsp;&nbsp;"; } else { row1.innerHTML = "Gluten free: <img src='images/greenCheck2.jpg' style='width: 10px; height: 10px;'> &nbsp;&nbsp;"; }
+                if (data.dairyFree==false) { row1.innerHTML += "Dairy-free: <img src='images/redNo.png' style='width: 14px; height: 10px;'> &nbsp;&nbsp;"; } else { row1.innerHTML += "Dairy-free: <img src='images/greenCheck2.jpg' style='width: 10px; height: 10px;'> &nbsp;&nbsp;"; }
+                if (data.vegan==false) { row1.innerHTML += "Vegan: <img src='images/redNo.png' style='width: 14px; height: 10px;'>"; } else { row1.innerHTML += "Vegan: <img src='images/greenCheck2.jpg' style='width: 10px; height: 10px;'>"; }
+                if (data.vegetarian==false) { row2.innerHTML = "Vegetarian: <img src='images/redNo.png' style='width: 14px; height: 10px;'> &nbsp;&nbsp;"; } else { row2.innerHTML = "Vegetarian: <img src='images/greenCheck2.jpg' style='width: 14px; height: 14px;'> &nbsp;&nbsp;"; }
+                if (data.lowFodmap==false) { row2.innerHTML += "Low fodmap: <img src='images/redNo.png' style='width: 14px; height: 10px;'>"; } else { row2.innerHTML += "Low fodmap: <img src='images/greenCheck2.jpg' style='width: 10px; height: 10px;'>"; }
 
                 ingredients.append(diets);
                 ingredients.append(row1);
@@ -371,7 +366,7 @@
         // Show loading GIF animation
         let loadingDIV = document.createElement("div") as HTMLDivElement;
         let loadingGIF = document.createElement("img") as HTMLImageElement;
-        loadingGIF.src = 'dist/images/loading.gif';
+        loadingGIF.src = 'images/loading.gif';
         loadingGIF.id = 'loading';
         loadingDIV.append(loadingGIF);
         section2d.append(loadingDIV);
@@ -439,11 +434,11 @@
                     diets.innerHTML += data.recipes[0].diets[i] + ', ';
                 }
 
-                if (data.recipes[0].glutenFree==false) { row1.innerHTML = "Gluten-free: <img src='dist/images/redNo.png' style='width: 14px; height: 10px;'> &nbsp;&nbsp;"; } else { row1.innerHTML = "Gluten free: <img src='dist/images/greenCheck2.jpg' style='width: 10px; height: 10px;'> &nbsp;&nbsp;"; }
-                if (data.recipes[0].dairyFree==false) { row1.innerHTML += "Dairy-free: <img src='dist/images/redNo.png' style='width: 14px; height: 10px;'> &nbsp;&nbsp;"; } else { row1.innerHTML += "Dairy-free: <img src='dist/images/greenCheck2.jpg' style='width: 10px; height: 10px;'> &nbsp;&nbsp;"; }
-                if (data.recipes[0].vegan==false) { row1.innerHTML += "Vegan: <img src='dist/images/redNo.png' style='width: 14px; height: 10px;'>"; } else { row1.innerHTML += "Vegan: <img src='dist/images/greenCheck2.jpg' style='width: 10px; height: 10px;'>"; }
-                if (data.recipes[0].vegetarian==false) { row2.innerHTML = "Vegetarian: <img src='dist/images/redNo.png' style='width: 14px; height: 10px;'> &nbsp;&nbsp;"; } else { row2.innerHTML = "Vegetarian: <img src='dist/images/greenCheck2.jpg' style='width: 14px; height: 14px;'> &nbsp;&nbsp;"; }
-                if (data.recipes[0].lowFodmap==false) { row2.innerHTML += "Low fodmap: <img src='dist/images/redNo.png' style='width: 14px; height: 10px;'>"; } else { row2.innerHTML += "Low fodmap: <img src='dist/images/greenCheck2.jpg' style='width: 10px; height: 10px;'>"; }
+                if (data.recipes[0].glutenFree==false) { row1.innerHTML = "Gluten-free: <img src='images/redNo.png' style='width: 14px; height: 10px;'> &nbsp;&nbsp;"; } else { row1.innerHTML = "Gluten free: <img src='images/greenCheck2.jpg' style='width: 10px; height: 10px;'> &nbsp;&nbsp;"; }
+                if (data.recipes[0].dairyFree==false) { row1.innerHTML += "Dairy-free: <img src='images/redNo.png' style='width: 14px; height: 10px;'> &nbsp;&nbsp;"; } else { row1.innerHTML += "Dairy-free: <img src='images/greenCheck2.jpg' style='width: 10px; height: 10px;'> &nbsp;&nbsp;"; }
+                if (data.recipes[0].vegan==false) { row1.innerHTML += "Vegan: <img src='images/redNo.png' style='width: 14px; height: 10px;'>"; } else { row1.innerHTML += "Vegan: <img src='images/greenCheck2.jpg' style='width: 10px; height: 10px;'>"; }
+                if (data.recipes[0].vegetarian==false) { row2.innerHTML = "Vegetarian: <img src='images/redNo.png' style='width: 14px; height: 10px;'> &nbsp;&nbsp;"; } else { row2.innerHTML = "Vegetarian: <img src='images/greenCheck2.jpg' style='width: 14px; height: 14px;'> &nbsp;&nbsp;"; }
+                if (data.recipes[0].lowFodmap==false) { row2.innerHTML += "Low fodmap: <img src='images/redNo.png' style='width: 14px; height: 10px;'>"; } else { row2.innerHTML += "Low fodmap: <img src='images/greenCheck2.jpg' style='width: 10px; height: 10px;'>"; }
 
                 ingredients.append(diets);
                 ingredients.append(row1);
@@ -615,8 +610,19 @@ if (sShowHomeRecipes) {
         frontArticle(sHomeRecipes[i]);   
     }
 }    
-    
 
+
+// run tooltiptext on load
+/*
+tooltipBox.style.visibility = 'visible';
+
+function onStartup() {
+    // hide tooltiptext
+    tooltipBox.style.visibility = "hidden";
+};
+
+setTimeout(onStartup, 8000); // hides tooltip after 3 seconds
+*/
 
 
 // Function to remove all child-nodes (content) in a chosen container-element
@@ -648,7 +654,7 @@ function searchArticles(query: string) {
     // Show loading GIF animation
     let loadingDIV = document.createElement("div") as HTMLDivElement;
     let loadingGIF = document.createElement("img") as HTMLImageElement;
-    loadingGIF.src = 'dist/images/loading.gif';
+    loadingGIF.src = 'images/loading.gif';
     loadingGIF.id = 'loading';
     loadingDIV.append(loadingGIF);
     section2.append(loadingDIV);
@@ -849,11 +855,10 @@ function favoriteArticles() {
                
           });
 
-            //wyce = wyce + `<div style="margin-top: 10px; border: 1px solid #aaa; padding: 10px;"><p>ID: ${wyceObject.article[n].id} - ${wyceObject.article[n].title}<br><br><img src="${wyceObject.article[n].image}" style="width: 300px;" onclick="getInformation(${wyceObject.article[n].id})"><br></div>`;
-            
+        
         }
 
-        //${getInformation(wyceObject.article[n].id)}
+
         
       
 

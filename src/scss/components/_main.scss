@@ -1,17 +1,38 @@
 
     @use '../base/typography' as t;
 
-   /* mixin used by all sections (2a-d) */
-   @mixin articleSection($a, $b) {
+   /* mixins used by all sections (2a-d) */
 
-    justify-content: $a; /* default: space-evenly. Alternative: space-around OR space-between */
-    align-items: $b; /* default: stretch. Alternative: center, flex-end, baseline */
-    flex-wrap: wrap;
-    width: 94%;
-    margin-right: 3%;
-    margin-left: 3%;
-    margin-top: 1%;
-    border: 0px solid #bbb;
+    /* Default for section 2 (Search) and 2b (Favorites) */
+    @mixin articleImgCover($width: 370px, $height: 240px) {
+
+        width: $width;
+        height: $height;
+        object-fit: cover;
+        border-radius: 5px;
+
+    }
+
+    /* Default for section 2c (Home) and 2d (Recipe) */
+    @mixin articleImgContain($width: 570px, $height: auto) {
+
+        width: $width;
+        height: $height;
+        object-fit: contain;
+        border-radius: 5px;
+
+    }    
+
+   @mixin articleSection($jc, $ai, $width: 94%) {
+
+        justify-content: $jc; /* default: space-evenly. Alternative: space-around OR space-between */
+        align-items: $ai; /* default: stretch. Alternative: center, flex-end, baseline */
+        flex-wrap: wrap;
+        width: $width;
+        margin-right: 3%;
+        margin-left: 3%;
+        margin-top: 1%;
+        border: 0px solid #bbb;
 
    }
 
@@ -25,10 +46,7 @@
 
             img {
 
-                /* height: 200px; */
-                width: -webkit-fill-available;
-                object-fit: cover;
-                border-radius: 5px;
+                @include articleImgCover();
 
             }
 
@@ -47,10 +65,7 @@
 
             img {
 
-                /* height: 200px; */
-                width: -webkit-fill-available;
-                object-fit: cover;
-                border-radius: 5px;
+                @include articleImgCover();
 
             }
 
@@ -68,10 +83,7 @@
 
             img {
 
-                /* height: 200px; */
-                width: -webkit-fill-available;
-                object-fit: cover;
-                border-radius: 5px;
+                @include articleImgContain();
 
             }
 
@@ -89,10 +101,7 @@
 
             img {
 
-                /* height: 200px; */
-                width: -webkit-fill-available;
-                object-fit: cover;
-                border-radius: 5px;
+                @include articleImgContain();
 
             }
 
@@ -118,15 +127,18 @@
 
     }
 
-    
+/* Search and Favorite Sections */
+.section2, .section2b {
+
     article {
     
-        max-width: 352px;
-        padding: 40px;
-        height: auto;
-        margin: 20px;
-        border: 1px solid #999;
-        border-radius: 12px;
+            width: 370px; /* media 1100px + */
+            padding: 40px;
+            height: 480px;
+            margin: 30px;
+            border: 1px solid #999;
+            border-radius: 12px;       
+    
 
         h1 {
 
@@ -156,7 +168,293 @@
         
     }
 
+}    
+
+
+
+
+
+/* ----- Screen width up to 1520px ------ */
+@media only screen and (max-width: 1520px) {
+
+    /* Home and Recipe Sections */    
+        .section2, .section2b {
     
+            article {
+            
+                    width: 370px;  /* media 800-1100px + */
+                    padding: 40px;
+                    height: auto;
+                    margin: 30px;
+                    border: 1px solid #999;
+                    border-radius: 12px;   
+    
+                    img {
+    
+                        @include articleImgCover();
+        
+                    }
+    
+            }
+    
+        }
+    
+    }
+    
+    
+    /* ----- Screen width up to 1100px ------ */
+    @media only screen and (max-width: 1100px) {
+    
+        /* Home and Recipe Sections */    
+            .section2, .section2b {
+        
+                article {
+                
+                        width: 269px;  /* media 876-1100px */
+                        padding: 40px;
+                        height: auto;
+                        margin: 30px;
+                        border: 1px solid #999;
+                        border-radius: 12px;   
+        
+                        img {
+        
+                            @include articleImgCover(260px);
+            
+                        }
+        
+                }
+    
+    
+        
+            }
+        
+        }
+    
+    
+     /* ----- Screen width up to 1100px ------ */
+    @media only screen and (max-width: 880px) {
+    
+        /* Home and Recipe Sections */    
+            .section2, .section2b {
+        
+                article {
+                
+                        width: 380px;  /* media 876-1100px */
+                        padding: 40px;
+                        height: auto;
+                        margin: 30px;
+                        border: 1px solid #999;
+                        border-radius: 12px;   
+        
+                        img {
+        
+                            @include articleImgCover();
+            
+                        }
+        
+                }
+        
+            }
+        
+        }   
+    
+    /* ----- Screen width up to 876px ------ */
+    @media only screen and (max-width: 520px) {
+    
+        /* Home and Recipe Sections */    
+            .section2, .section2b {
+    
+    
+                article {
+                
+                        width: 280px;  /* media 576-876px */
+                        padding: 40px;
+                        height: auto;
+                        margin: 30px;
+                        border: 1px solid #999;
+                        border-radius: 12px;   
+        
+                        img {
+        
+                            @include articleImgCover(280px);
+            
+                        }
+        
+                }
+    
+                @include articleSection(space-evenly, stretch, 470px);
+        
+            }
+        
+        }
+
+
+
+
+
+
+/* Home and Recipe Sections */
+.section2c, .section2d {
+
+    article {
+    
+            width: 570px; /* media 1100px + */
+            padding: 40px;
+            height: auto;
+            margin: 30px;
+            border: 1px solid #999;
+            border-radius: 12px;       
+    
+
+        h1 {
+
+            margin: 0;
+            padding: 0px 0px 10px 0px;
+            font-size: 1.3rem; /* 1.7rem max */
+            text-align: left;
+            font-family: t.$header-font;
+    
+        }
+
+        p {
+    
+            font-size: 0.8rem;
+            text-align: left;
+            line-height: 20px;
+            
+        }  
+        
+        li {
+    
+            font-size: 0.8rem;
+            text-align: left;
+            line-height: 20px;
+            
+        }   
+        
+    }
+
+}
+  
+/* ----- Screen width up to 1520px ------ */
+@media only screen and (max-width: 1520px) {
+
+/* Home and Recipe Sections */    
+    .section2c, .section2d {
+
+        article {
+        
+                width: 369px;  /* media 800-1100px + */
+                padding: 40px;
+                height: auto;
+                margin: 30px;
+                border: 1px solid #999;
+                border-radius: 12px;   
+
+                img {
+
+                    @include articleImgContain(369px, auto);
+    
+                }
+
+        }
+
+    }
+
+}
+
+
+/* ----- Screen width up to 1100px ------ */
+@media only screen and (max-width: 1100px) {
+
+    /* Home and Recipe Sections */    
+        .section2c, .section2d {
+    
+            article {
+            
+                    width: 269px;  /* media 876-1100px */
+                    padding: 40px;
+                    height: auto;
+                    margin: 30px;
+                    border: 1px solid #999;
+                    border-radius: 12px;   
+    
+                    img {
+    
+                        @include articleImgContain(269px, auto);
+        
+                    }
+    
+            }
+
+
+    
+        }
+    
+    }
+
+
+ /* ----- Screen width up to 880px ------ */
+@media only screen and (max-width: 880px) {
+
+    /* Home and Recipe Sections */    
+        .section2c, .section2d {
+    
+            article {
+            
+                    width: 380px;  /* media 876-1100px */
+                    padding: 40px;
+                    height: auto;
+                    margin: 30px;
+                    border: 1px solid #999;
+                    border-radius: 12px;   
+    
+                    img {
+    
+                        @include articleImgContain(380px, auto);
+        
+                    }
+    
+            }
+    
+        }
+    
+    }   
+
+/* ----- Screen width up to 520px ------ */
+@media only screen and (max-width: 520px) {
+
+    /* Home and Recipe Sections */    
+        .section2c, .section2d {
+
+
+            article {
+            
+                    width: 280px;  /* media 576-876px */
+                    padding: 40px;
+                    height: auto;
+                    margin: 30px;
+                    border: 1px solid #999;
+                    border-radius: 12px;   
+    
+                    img {
+    
+                        @include articleImgContain(280px, auto);
+        
+                    }
+    
+            }
+
+            @include articleSection(space-evenly, stretch, 470px);
+    
+        }
+    
+    }
+
+
+
+
 
     .hiddenDiv {
 

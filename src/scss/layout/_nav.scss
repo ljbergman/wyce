@@ -1,17 +1,20 @@
 @use '../base/typography' as t;
 
+
+
 nav {
 
         background-image: linear-gradient(to right, #3CA55C 0%, #B5AC49  51%, #3CA55C  100%);
        
-        width: 100%;
+        
         display: flex;
         justify-content: center;
         align-items: center;
      
-        width: 94%;
-        margin-right: 3%;
-        margin-left: 3%;
+        width: 90%; /* default: 90% */
+
+        margin-right: auto;
+        margin-left: auto;
 
         border: 5px solid #ddd;
       
@@ -71,6 +74,20 @@ nav {
         }     
 
     }
+
+/* ----- Screen width up to 530px ------ */
+@media only screen and (max-width: 530px) {
+
+  nav {
+
+    width: 480px;
+    border-radius: 0px;
+    border-left: 0px;
+    border-right: 0px;
+
+  }
+
+}
 
 
     /* TOOL TIP */
