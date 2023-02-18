@@ -25,7 +25,7 @@ Upcoming:
 - OOP version of Wyce (typescript)
 
 # DEMO MATERIAL: http://wyce.recipes/demo
-# SITE DEMO: http://wyce.recipes
+# SITE DEMO: https://wyce.recipes
 
 
 ## API
