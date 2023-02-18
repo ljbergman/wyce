@@ -24,7 +24,9 @@ Upcoming:
 - Slightly more mobile friendly version (optimization)
 - OOP version of Wyce (typescript)
 
-# Demo URL: http://wyce.recipes/demo
+# DEMO MATERIAL: http://wyce.recipes/demo
+# SITE DEMO: http://wyce.recipes
+
 
 ## API
 
