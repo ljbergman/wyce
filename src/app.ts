@@ -57,7 +57,7 @@
      const options = {
         method: 'GET',
         headers: {
-            'X-RapidAPI-Key': API_KEY + 'cd2',
+            'X-RapidAPI-Key': API_KEY,
             'X-RapidAPI-Host': API_HOST
         }
     };
