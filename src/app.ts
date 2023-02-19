@@ -977,67 +977,67 @@ function favoriteArticles() {
             if (tags!=='') { 
                 tags += ','; 
             } 
-            tags += 'gluten free';
+            tags += 'gluten-free';
         }
         if (dairyFree.checked) { 
             if (tags!=='') { 
                 tags += ','; 
             } 
-            tags += 'dairy free';
+            tags += 'dairy-free';
         }
         if (eggFree.checked) { 
             if (tags!=='') { 
                 tags += ','; 
             } 
-            tags += 'egg free';
+            tags += 'egg-free';
         }
         if (peanutFree.checked) { 
             if (tags!=='') { 
                 tags += ','; 
             } 
-            tags += 'peanut free';
+            tags += 'peanut-free';
         }  
         if (sesameFree.checked) { 
             if (tags!=='') { 
                 tags += ','; 
             } 
-            tags += 'sesame free';
+            tags += 'sesame-free';
         }          
         if (seafoodFree.checked) { 
             if (tags!=='') { 
                 tags += ','; 
             } 
-            tags += 'seafood free';
+            tags += 'seafood-free';
         }    
         if (shellfishFree.checked) { 
             if (tags!=='') { 
                 tags += ','; 
             } 
-            tags += 'shellfish free';
+            tags += 'shellfish-free';
         }    
         if (soyFree.checked) { 
             if (tags!=='') { 
                 tags += ','; 
             } 
-            tags += 'soy free';
+            tags += 'soy-free';
         }    
         if (sulfiteFree.checked) { 
             if (tags!=='') { 
                 tags += ','; 
             } 
-            tags += 'sulfite free';
+            tags += 'sulfite-free';
         } 
         if (treenutFree.checked) { 
             if (tags!=='') { 
                 tags += ','; 
             } 
-            tags += 'tree nut free';
+            tags += 'tree-nut-free';
         }
         if (wheatFree.checked) { 
             if (tags!=='') { 
                 tags += ','; 
             } 
-            tags += 'wheat free';
+            tags += 'wheat-free';
         }
         
 
