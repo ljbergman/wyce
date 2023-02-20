@@ -19,6 +19,7 @@ Other features:
 
 Upcoming:
 - Generate recipes similar to the one you picked
+- More optimized search options
 - Better error handling
 - List with different categories
 - Slightly more mobile friendly version (optimization)
